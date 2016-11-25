@@ -2,7 +2,7 @@
 # Maintainer: Louis-Guillaume Gagnon <louis.guillaume.gagnon@gmail.com>
 
 pkgname=dwm
-pkgver=6.1
+pkgver=6.1.r5.g56a31dc
 pkgrel=1
 pkgdesc="Dynamic window manager for X"
 url="http://dwm.suckless.org"
