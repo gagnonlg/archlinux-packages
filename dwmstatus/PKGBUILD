@@ -1,0 +1,29 @@
+# -*- mode: sh -*-
+# Maintainer: Louis-Guillaume Gagnon <louis.guillaume.gagnon@gmail.com>
+
+pkgname=dwmstatus
+pkgver=0.r0.g3607f8d
+pkgrel=1
+pkgdesc="Status bar for dwm"
+url="https://gitlab.com/glg/dwmstatus"
+arch=('x86_64')
+license=('MIT')
+depends=('libx11')
+source=("git+https://gitlab.com/glg/dwmstatus.git")
+md5sums=('SKIP')
+
+pkgver () {
+    cd $srcdir/$pkgname
+    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+    cd $srcdir/$pkgname
+    make
+}
+
+package() {
+    cd $srcdir/$pkgname
+    make PREFIX=/usr DESTDIR=$pkgdir install
+    install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
+}
