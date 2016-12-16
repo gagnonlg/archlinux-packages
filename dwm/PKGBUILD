@@ -16,7 +16,7 @@ source=("git+http://git.suckless.org/dwm#commit=56a31dc"
        )
 md5sums=('SKIP'
          '321b7919f066c88b7684990f687e65e4'
-         '57e4b34c42cab9398e248cd0ec974847')
+         'be764f88b8c48eaeb5a4ad6bfd1c0ef0')
 
 prepare() {
     cd $srcdir/$pkgname
