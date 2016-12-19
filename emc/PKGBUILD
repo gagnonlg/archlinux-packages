@@ -1,0 +1,16 @@
+pkgname=emc
+pkgver=0
+pkgrel=1
+pkgdesc="Launcher for emacs deamon"
+arch=('x86_64')
+url=""
+license=('None')
+groups=()
+depends=('emacs')
+source=("emc")
+md5sums=('aad8469614cff82bbbcc26824a595013')
+
+package() {
+	mkdir -p "$pkgdir/usr/bin/"
+	cp emc "$pkgdir/usr/bin/"
+}
