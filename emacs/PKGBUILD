@@ -1,0 +1,27 @@
+# -*- mode: sh -*-
+# Maintainer: Louis-Guillaume Gagnon <louis.guillaume.gagnon@gmail.com>
+
+pkgname=emacs
+pkgver=25.1
+pkgrel=1
+pkgdesc="An extensible, customizable, free/libre text editor — and more."
+url="https://www.gnu.org/s/emacs"
+arch=('x86_64')
+license=('GPL')
+source=("https://ftp.gnu.org/gnu/emacs/emacs-$pkgver.tar.xz"
+        "https://ftp.gnu.org/gnu/emacs/emacs-$pkgver.tar.xz.sig"
+       )
+validpgpkeys=("28D3BED851FDF3AB57FEF93C233587A47C207910")
+md5sums=('4f3d42fb22823a659e16bfa89078a74c'
+         'SKIP')
+
+build() {
+    cd $srcdir/emacs-$pkgver
+    ./configure --prefix=/usr
+    make
+}
+
+package() {
+  cd $srcdir/emacs-$pkgver
+  make DESTDIR=$pkgdir install
+}
