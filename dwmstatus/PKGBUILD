@@ -8,7 +8,7 @@ pkgdesc="Status bar for dwm"
 url="https://gitlab.com/glg/dwmstatus"
 arch=('x86_64')
 license=('MIT')
-depends=('libx11')
+depends=('python2-xlib' 'python2-pytz')
 source=("git+https://github.com/gagnonlg/dwmstatus.git")
 md5sums=('SKIP')
 
